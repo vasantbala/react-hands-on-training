@@ -3,6 +3,7 @@ import './App.css';
 import Hello from './Hello';
 import HelloWithStateAndEventHandlers from './HelloWithState';
 import FruitLister, { FRUIT_LIST } from './Lists';
+import EventsLession from './EventsLession';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
        <Hello name="Pat From Components" enthusiasmLevel={3}/>
        <HelloWithStateAndEventHandlers name="WithState" enthusiasmLevel={3}/>
        <FruitLister fruits={FRUIT_LIST} />
+       <EventsLession fruits={FRUIT_LIST}/>
        <ProjectsPage/>
       {/* <Hello name="Tim" enthusiasmLevel={0}/> */}
     </div>
