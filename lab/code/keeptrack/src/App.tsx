@@ -4,6 +4,8 @@ import Hello from './Hello';
 import HelloWithStateAndEventHandlers from './HelloWithState';
 import FruitLister, { FRUIT_LIST } from './Lists';
 import EventsLession from './EventsLession';
+import ProjectList from './projects/ProjectList';
+import { MOCK_PROJECTS } from './projects/MockProjects';
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
        <HelloWithStateAndEventHandlers name="WithState" enthusiasmLevel={3}/>
        <FruitLister fruits={FRUIT_LIST} />
        <EventsLession fruits={FRUIT_LIST}/>
-       <ProjectsPage/>
+       {/* <ProjectsPage/> */}
+       <ProjectList projects={MOCK_PROJECTS}/>
       {/* <Hello name="Tim" enthusiasmLevel={0}/> */}
     </div>
   );
