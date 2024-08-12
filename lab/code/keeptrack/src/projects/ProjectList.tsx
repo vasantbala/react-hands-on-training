@@ -1,4 +1,6 @@
 import { Project } from "./Project";
+import ProjectCard from "./ProjectCard";
+import ProjectForm from "./ProjectForm";
 import ProjectListItem from "./ProjectListItem";
 
 interface ProjectListProps{
@@ -6,21 +8,13 @@ interface ProjectListProps{
 }
 
 function ProjectList({ projects }: ProjectListProps){
-    // return <pre>{JSON.stringify(projects, null, ' ')}</pre>;
-    return(
-        <div className="cols-sm">
-            {projects.map((project) => (
-                <ProjectListItem project={project} />
-            ))}
-            
-        </div>        
-        
-        // <ul className="row">
-        //     {projects.map((project) => (
-        //         <li key={project.id}>{project.name}</li>
-        //     ))}
-        // </ul>
-    );
+    const items = projects.map(project => (
+        <div key={project.id} className="cols-sm">
+          <ProjectCard project={project}></ProjectCard>
+         <ProjectForm />
+        </div>
+      ));
+      return <div className="row">{items}</div>;
 }
 
 export default ProjectList;
