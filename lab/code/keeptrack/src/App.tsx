@@ -8,8 +8,14 @@ import ProjectList from './projects/ProjectList';
 import { MOCK_PROJECTS } from './projects/MockProjects';
 import Clock from './StateLesson';
 import ParentLession from './ParentLesson';
-
+import { Project } from './projects/Project';
+import FormsLession from './FormsLession';
 function App() {
+
+  const saveProject = (project: Project) => {
+    console.log('Saving Project:', project);
+  }
+
   return (
     <div className="container">       
        <Hello name="Warner" enthusiasmLevel={3}/>
@@ -19,8 +25,11 @@ function App() {
        <EventsLession fruits={FRUIT_LIST}/>
        <Clock/>
       <ParentLession/>
+      <FormsLession />
        {/* <ProjectsPage/> */}
-       <ProjectList projects={MOCK_PROJECTS}/>
+       <ProjectList
+         onSave={saveProject}
+         projects={MOCK_PROJECTS}/>
       {/* <Hello name="Tim" enthusiasmLevel={0}/> */}
     </div>
   );
