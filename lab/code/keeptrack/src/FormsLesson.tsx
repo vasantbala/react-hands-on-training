@@ -1,6 +1,6 @@
 import React from "react";
 
-function FormsLession(){
+function FormsLesson(){
     const [value, setValue] = React.useState('');       
     const handleChange = (event: any) => {
         setValue(event.target.value.toUpperCase());
@@ -90,4 +90,4 @@ function FormsLession(){
     );
 }
 
-export default FormsLession;
+export default FormsLesson;

@@ -42,6 +42,17 @@ const rootElement = document.getElementById('root');
   // }
   // const element = <img src={logo.path} alt={logo.name} title={logo.title} />;
 
+  const okUrl = 'http://localhost:5001/photos?_page=1&_limit=100';
+  const notFoundErrorUrl = 'https://httpstat.us/404';
+  const forbiddenErrorUrl = 'https://httpstat.us/403';
+  const serverErrorUrl = 'https://httpstat.us/500';
+
+  axios
+  .get(serverErrorUrl)
+  .get(okUrl)
+  .then((response) => response.data)
+  .then((data) => console.log(data))
+  .catch(error => console.log(error));
 
   const element = (
     <ul>

@@ -5,7 +5,7 @@ interface Props{
     fruits: Fruit[];
 }
 
-class EventsLession extends React.Component<Props>{
+class EventsLesson extends React.Component<Props>{
     
     handleClickInClass(){
         window.alert('This doesnt work because ???? ');
@@ -42,7 +42,7 @@ class EventsLession extends React.Component<Props>{
     }
 }
 
-export default EventsLession;
+export default EventsLesson;
 
 function handleClick(){
     window.alert('click handled.');

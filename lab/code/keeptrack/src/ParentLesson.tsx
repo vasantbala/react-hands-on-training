@@ -21,7 +21,7 @@ const Result = (resultProps: ResultProps) => {
     return <div>Result: {resultProps.value}</div>;
 };
   
-function ParentLession(){
+function ParentLesson(){
     const [counter, setCounter] = React.useState(0);
 
     const incrementCounter = () => {
@@ -42,4 +42,4 @@ function ParentLession(){
     );
 }
 
-export default ParentLession;
+export default ParentLesson;
