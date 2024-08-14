@@ -2,18 +2,11 @@ import { useEffect, useState } from "react";
 import { MOCK_PROJECTS } from "./MockProjects";
 import { Project } from "./Project";
 import { projectAPI } from "./projectAPI";
-import Hello from "../Hello";
-import HelloWithStateAndEventHandlers from "../HelloWithState";
-import FruitLister, { FRUIT_LIST } from "../Lists";
-import EventsLesson from "../EventsLesson";
-import Clock from "../StateLesson";
-import ParentLesson from "../ParentLesson";
-import FormsLesson from "../FormsLesson";
 import ProjectList from "./ProjectList";
 function ProjectsPage(){
     const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(false);
-  const [showLessons, setShowLessons] = useState(false);
+  
   const [error, setError] = useState<string | undefined>(undefined);
 
   const saveProject = (project: Project) => {
@@ -36,10 +29,7 @@ function ProjectsPage(){
     });
   }
 
-  const toggleLessons = (event: any) => {
-    const { checked } = event.target;
-    setShowLessons(checked);
-  };
+  
 
   useEffect(() => {
   async function loadProjects() {
@@ -93,26 +83,7 @@ function ProjectsPage(){
           </div>
         )}
 
-<label htmlFor="chkShowLessons">Show Lessons</label>
-    <input type="checkbox" id="chkShowLessons" checked={showLessons} onChange={toggleLessons} />
-    
-    { showLessons ? (
-      <>
-      <Hello name="Warner" enthusiasmLevel={3}/>
-      <Hello name="Pat From Components" enthusiasmLevel={3}/>
-     {/* <Hello name="Tim" enthusiasmLevel={0}/> */}
-      <HelloWithStateAndEventHandlers name="WithState" enthusiasmLevel={3}/>
-      <FruitLister fruits={FRUIT_LIST} />
-      <EventsLesson fruits={FRUIT_LIST}/>
-      <Clock/>
-     <ParentLesson/>
-     <FormsLesson />
-     {/* <ReactHookFormLesson/> */}
-      {/* <ProjectsPage/> */}
-      </>
-    ): null
 
-    }
     </>);
 }
 
