@@ -2,6 +2,7 @@ import ProjectsPage from './projects/ProjectsPage'
 import './App.css';
 import HomePage from './home/HomePage';
 import { BrowserRouter, NavLink, Route, Router, Routes } from 'react-router-dom';
+import ProjectPage from './projects/ProjectPage';
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:id" element={<ProjectPage />} />
             </Routes>
           </div>
     </BrowserRouter>
